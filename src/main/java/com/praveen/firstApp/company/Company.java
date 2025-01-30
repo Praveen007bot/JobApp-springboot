@@ -13,18 +13,15 @@ public class Company {
     Long id;
     String name;
     String description;
-    @OneToMany
-    List<Job> jobs;
     String location;
 
     public Company() {
     }
 
-    public Company(Long id, String name, String description, List<Job> jobs, String location) {
+    public Company(Long id, String name, String description, String location) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.jobs = jobs;
         this.location = location;
     }
 
@@ -51,14 +48,6 @@ public class Company {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public List<Job> getJobs() {
-        return jobs;
-    }
-
-    public void setJobs(List<Job> jobs) {
-        this.jobs = jobs;
     }
 
     public String getLocation() {
