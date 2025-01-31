@@ -2,6 +2,7 @@ package com.praveen.firstApp.company;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.praveen.firstApp.job.Job;
+import com.praveen.firstApp.review.Review;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -20,6 +21,9 @@ public class Company {
     @OneToMany(mappedBy = "company")
     private List<Job> jobs;
 
+    @OneToMany(mappedBy = "company")
+    private List<Review> reviews;
+
     public Company() {
     }
 
@@ -29,6 +33,14 @@ public class Company {
         this.description = description;
         this.location = location;
         this.jobs = jobs;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public Long getId() {
